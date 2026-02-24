@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Opm {
+  id        String @id @default(cuid())
+  codigo    String @unique
+  nome         String
+  municipio    String?
+  macroComando String?
+  metas     QffMeta[]
+  veiculos  Veiculo[]
+}
+
+model QffMeta {
+  id                String @id @default(cuid())
+  opmCodigo         String
+  grupo             String
+  programa          String
+  quantidadeFixada  Int
+  opm               Opm    @relation(fields: [opmCodigo], references: [codigo])
+
+  @@unique([opmCodigo, grupo, programa])
+}
+
+model Veiculo {
+  id           String @id @default(cuid())
+  patrimonio   String @unique
+  placa        String
+  marcaModelo  String
+  ano          Int
+  grupo        String
+  programa     String
+  opmCodigo    String
+  prefixo      String?
+  situacao     String?
+  opm          Opm    @relation(fields: [opmCodigo], references: [codigo])
+}

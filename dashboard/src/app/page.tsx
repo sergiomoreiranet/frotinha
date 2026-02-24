@@ -1,0 +1,40 @@
+import prisma from "@/lib/prisma"
+import { DashboardTable } from "@/components/DashboardTable"
+
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+
+  // Buscar todas OPMs
+  const opms = await prisma.opm.findMany({
+    orderBy: { nome: 'asc' }
+  })
+
+  // Buscar Metas
+  const metas = await prisma.qffMeta.findMany()
+
+  // Buscar Veículos Existentes
+  const veiculos = await prisma.veiculo.findMany()
+
+  // Lista única de nomes dos 28 Arquivos QFFs (Macro Comandos) para popular o Dropdown
+  const macroComandosRaw = await prisma.opm.findMany({
+    select: { macroComando: true },
+    distinct: ['macroComando']
+  })
+
+  const macroComandos = macroComandosRaw
+    .map(m => m.macroComando)
+    .filter((m): m is string => Boolean(m))
+    .sort()
+
+  return (
+    <div className="w-full">
+      <DashboardTable
+        opms={opms}
+        metas={metas}
+        veiculos={veiculos}
+        macroComandos={macroComandos}
+      />
+    </div>
+  )
+}
