@@ -1,14 +1,14 @@
 "use client"
 import { useState, useMemo } from "react"
 
-type DashboardTableProps = {
+type AjusteFrotaTableProps = {
     opms: any[];
     metas: any[];
     veiculos: any[];
     macroComandos: string[];
 }
 
-export function DashboardTable({ opms, metas, veiculos, macroComandos }: DashboardTableProps) {
+export function AjusteFrotaTable({ opms, metas, veiculos, macroComandos }: AjusteFrotaTableProps) {
     // 1. Estado do filtro (Inicia com o primeiro comando disponível ou vazio)
     const [selectedComando, setSelectedComando] = useState<string>(macroComandos[0] || "")
 
@@ -75,8 +75,8 @@ export function DashboardTable({ opms, metas, veiculos, macroComandos }: Dashboa
         <div className="space-y-6">
             <header className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Painel de Frota Principal</h1>
-                    <p className="text-slate-500 mt-1">Cruzamento da Meta (Fixo) com a Frota Existente (QFF).</p>
+                    <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Ajuste de Frota OPMs</h1>
+                    <p className="text-slate-500 mt-1">Ambiente de conferência, validação e configuração das viaturas locais.</p>
                 </div>
                 <div className="flex gap-4 items-center">
                     {/* Filtro de Comando */}

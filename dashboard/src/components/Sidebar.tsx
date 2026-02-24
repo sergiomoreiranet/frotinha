@@ -9,7 +9,7 @@ export function Sidebar() {
 
     const links = [
         { name: "Painel de Frota", href: "/", icon: BarChart3 },
-        { name: "Painel OPMs (Tabela)", href: "/opms", icon: Car },
+        { name: "Ajuste de Frota OPMs", href: "/opms", icon: Car },
         { name: "Administração", href: "/admin", icon: Database },
     ]
 
@@ -37,8 +37,8 @@ export function Sidebar() {
                                 key={link.name}
                                 href={link.href}
                                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors text-sm font-medium ${isActive
-                                        ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
-                                        : "text-slate-400 hover:text-slate-50 hover:bg-slate-800"
+                                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
+                                    : "text-slate-400 hover:text-slate-50 hover:bg-slate-800"
                                     }`}
                             >
                                 <Icon className={`w-5 h-5 ${isActive ? "text-white" : "text-slate-400"}`} />

@@ -122,7 +122,8 @@ export async function POST(req: NextRequest) {
                             "CDIST": "COM DIST",
                             "RP Rv Est": "RP",
                             "APOIO B OP": "APOIO OPERAC",
-                            "VEÍCULOS ESPECIAIS": "VEIC ESPECIAL"
+                            "VEÍCULOS ESPECIAIS": "VEIC ESPECIAL",
+                            "RESERVA": "ROCAM"
                         };
 
                         if (pgmMap[programa.toUpperCase()]) {

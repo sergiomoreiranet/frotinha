@@ -1,13 +1,13 @@
 "use client"
 import { useState } from "react"
-import { Upload, FileDown, CheckCircle2, AlertCircle, Loader2, Play, Car } from "lucide-react"
+import { Upload, FileDown, CheckCircle2, AlertCircle, Loader2, Play, Car, Trash2 } from "lucide-react"
 
 export default function AdminPage() {
     const [qffFiles, setQffFiles] = useState<File[]>([])
     const [frotaFile, setFrotaFile] = useState<File | null>(null)
 
-    const [qffStatus, setQffStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
-    const [frotaStatus, setFrotaStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+    const [qffStatus, setQffStatus] = useState<"idle" | "loading" | "success" | "error" | "clearing">("idle")
+    const [frotaStatus, setFrotaStatus] = useState<"idle" | "loading" | "success" | "error" | "clearing">("idle")
 
     const [message, setMessage] = useState("")
 
@@ -32,6 +32,23 @@ export default function AdminPage() {
         }
     }
 
+    const handleClearQff = async () => {
+        if (!confirm("Tem certeza que deseja APAGAR TODAS as metas do QFF do banco de dados?")) return;
+        setQffStatus("clearing")
+        setMessage("")
+        try {
+            const res = await fetch("/api/admin/clear-qff", { method: "DELETE" })
+            const data = await res.json()
+            if (res.ok) {
+                setQffStatus("success")
+                setMessage(data.message)
+            } else throw new Error(data.error)
+        } catch (e: any) {
+            setQffStatus("error")
+            setMessage(e.message || "Erro ao apagar QFF")
+        }
+    }
+
     const handleFrotaUpload = async () => {
         if (!frotaFile) return
         setFrotaStatus("loading")
@@ -53,6 +70,23 @@ export default function AdminPage() {
         }
     }
 
+    const handleClearFrota = async () => {
+        if (!confirm("Tem certeza que deseja APAGAR TODA a frota de veículos existente do banco de dados?")) return;
+        setFrotaStatus("clearing")
+        setMessage("")
+        try {
+            const res = await fetch("/api/admin/clear-frota", { method: "DELETE" })
+            const data = await res.json()
+            if (res.ok) {
+                setFrotaStatus("success")
+                setMessage(data.message)
+            } else throw new Error(data.error)
+        } catch (e: any) {
+            setFrotaStatus("error")
+            setMessage(e.message || "Erro ao apagar Frota")
+        }
+    }
+
     return (
         <div className="space-y-8 max-w-5xl">
             <header>
@@ -71,15 +105,21 @@ export default function AdminPage() {
             <div className="grid md:grid-cols-2 gap-6">
                 {/* Card QFF */}
                 <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col">
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center">
-                            <FileDown className="w-5 h-5" />
+                    <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center">
+                                <FileDown className="w-5 h-5" />
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-slate-900">Planilha de Metas (QFF)</h3>
+                                <p className="text-xs text-slate-500">Múltiplos arquivos suportados</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 className="font-semibold text-slate-900">Planilha de Metas (QFF)</h3>
-                            <p className="text-xs text-slate-500">Múltiplos arquivos suportados</p>
-                        </div>
+                        <button onClick={handleClearQff} disabled={qffStatus === 'clearing'} className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Apagar Todo QFF">
+                            {qffStatus === 'clearing' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />}
+                        </button>
                     </div>
+
                     <div className="flex-1 my-4 border-2 border-dashed border-slate-200 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors relative cursor-pointer">
                         <input type="file" multiple accept=".xlsx, .xls" onChange={e => setQffFiles(Array.from(e.target.files || []))} className="absolute inset-0 opacity-0 cursor-pointer w-full h-full" />
                         <Upload className="w-8 h-8 text-slate-400 mb-3" />
@@ -99,15 +139,21 @@ export default function AdminPage() {
 
                 {/* Card Frota Atual */}
                 <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col">
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center">
-                            <Car className="w-5 h-5" />
+                    <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center">
+                                <Car className="w-5 h-5" />
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-slate-900">Planilha da Frota Existente</h3>
+                                <p className="text-xs text-slate-500">Ex: FROTA 02JAN26.xls</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 className="font-semibold text-slate-900">Planilha da Frota Existente</h3>
-                            <p className="text-xs text-slate-500">Ex: FROTA 02JAN26.xls</p>
-                        </div>
+                        <button onClick={handleClearFrota} disabled={frotaStatus === 'clearing'} className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Apagar Toda Frota (OB)">
+                            {frotaStatus === 'clearing' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />}
+                        </button>
                     </div>
+
                     <div className="flex-1 my-4 border-2 border-dashed border-slate-200 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors relative cursor-pointer">
                         <input type="file" accept=".xlsx, .xls" onChange={e => setFrotaFile(e.target.files?.[0] || null)} className="absolute inset-0 opacity-0 cursor-pointer w-full h-full" />
                         <Upload className="w-8 h-8 text-slate-400 mb-3" />
