@@ -13,8 +13,9 @@ export default async function OpmsPage() {
   // Buscar Metas
   const metas = await prisma.qffMeta.findMany()
 
-  // Buscar Veículos Existentes
+  // Buscar Veículos Originais e os Ajustados
   const veiculos = await prisma.veiculo.findMany()
+  const veiculosAjustados = await prisma.veiculoAjuste.findMany()
 
   // Lista única de nomes dos 28 Arquivos QFFs (Macro Comandos) para popular o Dropdown
   const macroComandosRaw = await prisma.opm.findMany({
@@ -33,6 +34,7 @@ export default async function OpmsPage() {
         opms={opms}
         metas={metas}
         veiculos={veiculos}
+        veiculosAjustados={veiculosAjustados}
         macroComandos={macroComandos}
       />
     </div>

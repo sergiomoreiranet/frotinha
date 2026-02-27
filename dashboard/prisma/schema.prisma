@@ -15,6 +15,7 @@ model Opm {
   macroComando String?
   metas     QffMeta[]
   veiculos  Veiculo[]
+  veiculosAjuste VeiculoAjuste[]
 }
 
 model QffMeta {
@@ -39,5 +40,20 @@ model Veiculo {
   opmCodigo    String
   prefixo      String?
   situacao     String?
+  opm          Opm    @relation(fields: [opmCodigo], references: [codigo])
+}
+
+model VeiculoAjuste {
+  id           String @id @default(cuid())
+  patrimonio   String @unique
+  placa        String
+  marcaModelo  String
+  ano          Int
+  grupo        String
+  programa     String
+  opmCodigo    String
+  prefixo      String?
+  situacao     String?
+  alteradoEm  DateTime?
   opm          Opm    @relation(fields: [opmCodigo], references: [codigo])
 }
