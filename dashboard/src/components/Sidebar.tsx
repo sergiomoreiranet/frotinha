@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { BarChart3, Database, Car, LogOut } from "lucide-react"
+import { BarChart3, Database, Car, LogOut, FileSpreadsheet, ShieldCheck } from "lucide-react"
 
 export function Sidebar() {
     const pathname = usePathname()
@@ -10,6 +10,9 @@ export function Sidebar() {
     const links = [
         { name: "Painel de Frota", href: "/", icon: BarChart3 },
         { name: "Ajuste de Frota OPMs", href: "/opms", icon: Car },
+        { name: "Comparativo Mensal", href: "/comparativo", icon: FileSpreadsheet },
+        { name: "Empréstimos", href: "/emprestimos", icon: Car },
+        { name: "Gerenciar Frota Plantão", href: "/frota-emprestimo", icon: ShieldCheck },
         { name: "Administração", href: "/admin", icon: Database },
     ]
 

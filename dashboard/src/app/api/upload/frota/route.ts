@@ -41,9 +41,10 @@ export async function POST(req: NextRequest) {
 
             // Garantir que a linha tenha algo válido (ex: placa)
             const placa = String(row[1] || "").trim(); // Coluna B
-            if (!placa) continue;
 
             const patrimonio = String(row[0] || "").trim(); // Coluna A
+            if (!patrimonio) continue; // Pelo menos o patrimônio deve existir
+
             const marcaModelo = String(row[2] || "").trim(); // Coluna C
             const ano = parseInt(String(row[3] || "0"), 10); // Coluna D
 
@@ -53,15 +54,14 @@ export async function POST(req: NextRequest) {
 
             const situacao = String(row[25] || "").trim(); // Coluna Z (SITUAÇÃO)
 
-            // Usuário pediu para ignorar viaturas em descarga
-            if (situacao.toUpperCase() === "DESCARGA") continue;
-
-            const codigoOpm = String(row[12] || "").trim(); // Coluna M = índice 12
+            let codigoOpm = String(row[12] || "").trim(); // Coluna M = índice 12
             const grdCmd = String(row[13] || "").trim(); // Coluna N = índice 13 (Grandes Comandos)
             let nomeOpm = String(row[14] || "").trim(); // Coluna O = índice 14
             const municipioOp = String(row[22] || "").trim(); // Coluna W = índice 22
 
-            if (!codigoOpm || codigoOpm === "undefined") continue;
+            if (!codigoOpm || codigoOpm === "undefined") {
+                codigoOpm = "SEM_OPM"; // OPM de fallback para veículos sem cadastro de Batalhão
+            }
 
             opmsAfetadas.add(codigoOpm);
 
@@ -69,12 +69,10 @@ export async function POST(req: NextRequest) {
                 nomeOpm = grdCmd || "OPM DESCONHECIDA";
             }
 
-            // Ignorar OPMs de teste
-            if (nomeOpm.toUpperCase().includes("OPM DE TESTE")) continue;
-
             const updateData: any = {};
             if (municipioOp) updateData.municipio = municipioOp;
             if (nomeOpm && nomeOpm !== "OPM DESCONHECIDA") updateData.nome = nomeOpm;
+
 
             // Save OPM to upsert later
             if (!opmsToUpsert.has(codigoOpm)) {

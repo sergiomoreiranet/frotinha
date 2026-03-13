@@ -8,6 +8,9 @@ async function main() {
     console.log("Iniciando carga de dados massiva...");
 
     /* 1. Limpar banco */
+    await prisma.emprestimo.deleteMany({});
+    await prisma.veiculoSnapshot.deleteMany({});
+    await prisma.veiculoAjuste.deleteMany({});
     await prisma.qffMeta.deleteMany({});
     await prisma.veiculo.deleteMany({});
     await prisma.opm.deleteMany({});

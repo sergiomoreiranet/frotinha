@@ -14,7 +14,11 @@ export default async function Home() {
   const metas = await prisma.qffMeta.findMany()
 
   // Buscar Veículos Existentes
-  const veiculos = await prisma.veiculo.findMany()
+  const veiculos = await prisma.veiculo.findMany({
+    where: {
+      situacao: { not: 'DESCARGA' }
+    }
+  })
 
   // Lista única de nomes dos 28 Arquivos QFFs (Macro Comandos) para popular o Dropdown
   const macroComandosRaw = await prisma.opm.findMany({

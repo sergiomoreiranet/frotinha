@@ -1,0 +1,74 @@
+Abas encontradas:
+CONTROLE VTR 2026
+Trailblazers e Corollas 2026
+CMM
+Recolha M-5
+Recolha M-11
+Recolha M-3
+Recolha M-2
+Base
+
+
+= Aba "CONTROLE VTR 2026" =
+Linha 1:
+Col 0: Data | Col 1: Motivo | Col 2: Pertence | Col 3: Informação Adicional | Col 4: Macro Grupo | Col 5: Tipo de Tração | Col 6: Marca/Modelo | Col 7: Cor | Col 8: Câmbio | Col 9: Placa | Col 10: Ano | Col 11: Km | Col 12: Licenciamento | Col 13: Restrições | Col 14: 1ª Consulta | Col 15: 2ª Consulta | Col 16: Apresentação | Col 17: Estribo (Trail Cel) | Col 18: Rádio | Col 19: Grafismo | Col 20: Monocela | Col 21: TRD (Termo de Recebimento Definitivo) | Col 22: Revisão | Col 23: Realizada? | Col 24: Carga SIPL | Col 25: Grupo | Col 26: Prefixo no SIPL | Col 27: Prefixo na Vtr | Col 28: STATUS | Col 29: Última Revisão | Col 30: Localização | Col 31: Início | Col 32: Término | Col 33: Observações | Col 34: Histórico
+Linha 2:
+Col 0: 44715 | Col 1: Ajuste de Frota 2022 | Col 2: Reserva do Comando | Col 3: Ajuste de Frota 2022 | Col 4: 4 rodas | Col 5: 4x2 | Col 6: GM/Spin Canil | Col 7: Branca | Col 8: Manual | Col 9: CFY0I19 | Col 10: 2014 | Col 11: 91909 | Col 12: 2025 | Col 13: ------- | Col 14: 45741 | Col 16: Caracterizada | Col 17: não possui | Col 18: 214053271-H | Col 19: Pintura | Col 20: Sim | Col 24: CMM | Col 25: 16 | Col 26: 22-197 | Col 27: 22-197 | Col 28: Baixada | Col 30: Manutenção | Col 31: 45307 | Col 33: Adaptada para canil / Baixada para revisão OS 11.111 | Col 34: Analisando se vai descarregar / Adaptada para canil / licenciamento pendente devido à multa / o CPA/M-7 foi cientificado quanto a autuação pela mensagem n. CMM-1856/20.2/21 / REITERADO PELA MENSAGEM N. CMM-590/20.2/23 / REITERADO VIA FONE EM 251430MAI23 (CB PM EUNICE) /  061023JUN23 Cobrei a resolução (pagamento) da multa para o SUB TEN AMARAL /
+Linha 3:
+Col 0: 44755 | Col 1: Ajuste de Frota 2022 | Col 2: Reserva do Comando | Col 3: Ajuste de Frota 2022 | Col 4: 2 rodas | Col 5: ------- | Col 6: Honda/XRE 300 | Col 7: Branca | Col 8: ----- | Col 9: FKQ5803 | Col 10: 2016 | Col 11: 51461 | Col 12: 2025 | Col 13: ------- | Col 14: 45741 | Col 16: Caracterizada | Col 17: não possui | Col 18: não possui | Col 19: Adesivo | Col 20: não possui | Col 24: CMM | Col 25: 19 | Col 26: 19-235 | Col 27: 19-235 | Col 28: Baixada | Col 30: Manutenção  | Col 31: 45667 | Col 33: REVISÃO
+
+= Aba "Trailblazers e Corollas 2026" =
+Linha 1:
+Col 1: DETENTOR ATUAL | Col 2: UNIDADE | Col 3: PLACA TRAILBLAZER | Col 4: PLACA COROLLA | Col 5: OBSERVAÇÕES
+Linha 2:
+Col 0: 1 | Col 1: Jose Augusto Coutinho (94) | Col 2: CMT GERAL | Col 3: BZF1A37 | Col 4: EEF9581 / EEF8712 | Col 5: *O Cmt G baixou os corollas EEF9576 (Grupo 1) e EEF9063 (Grupo 1) ------ atualizando, EEF9576 está no Pátio Suzano e o EEF9063 teve alta, não está na MNT.
+Linha 3:
+Col 0: 2 | Col 1: Erick Gomes Bento (94) | Col 2: SUBCMT PM | Col 3: CSP6C81 | Col 5: Não tem Corolla
+
+= Aba "CMM" =
+Linha 1:
+Col 0: Seção de Administração de Frota
+Linha 2:
+Col 0: SUBDETENTOR | Col 1: MARCA/MODELO | Col 2: CÂMBIO | Col 3: PLACA | Col 4: ANO | Col 5: Tipo de Tração | Col 6: Licenciamento | Col 7: Restrições | Col 8: 1ª Consulta | Col 9: 2ª Consulta | Col 10: APRESENTAÇÃO | Col 11: GRAFISMO | Col 12: Rádio | Col 13: Disponível | Col 14: Carga SIPL | Col 15: GRUPO | Col 16: ENCONTRA-SE | Col 17: INÍCIO | Col 18: TÉRMINO | Col 19: OBSERVAÇÕES
+Linha 3:
+Col 0: Chefe CMM (SAF) | Col 1: GM/SPIN | Col 2: Manual | Col 3: FYD0546 | Col 4: 2020 | Col 5: 4X2 | Col 6: 2023 | Col 7: ---------- | Col 8: 45405 | Col 10: Caracterizada | Col 11: Adesivo | Col 13: Emprestada | Col 14: CMM | Col 15: 22 | Col 16: Uso da CH CMM | Col 17: 44963 | Col 19: Uso da CH CMM. Chaves com os motoristas// Emprestada para a SAF
+
+= Aba "Recolha M-5" =
+Linha 1:
+Col 0: RECOLHA - CPA/M-5
+Linha 2:
+Col 0: AGENDAMENTO | Col 2: DADOS ORIGEM | Col 10: RESULTADO | Col 14: DESTINO | Col 19: PRINCIPAIS MOTIVOS DE REPROVA 
+Linha 3:
+Col 0: Agendamento | Col 1: Horário | Col 2: Marca | Col 3: Placa | Col 4: Ano | Col 5: Patrimônio | Col 6: Batalhão | Col 7: Cia | Col 8: OPM Origem | Col 9: Programa | Col 10: OBS: | Col 12: Vistoriador SAF | Col 13: Vistoriador MNT | Col 14: Baixada Grafismo | Col 15: Subfrota | Col 16: OPM | Col 17: Prefixo | Col 18: Data Entrega | Col 19: SUSPENSÃO | Col 20: PNEUS GASTO | Col 21: MOTOR | Col 22: CÂMBIO | Col 23: FREIO | Col 24: ARREFECIMENTO | Col 25: ELÉTRICA
+
+= Aba "Recolha M-11" =
+Linha 1:
+Col 0: RECOLHA - CPA/M-11
+Linha 2:
+Col 0: AGENDAMENTO | Col 2: DADOS ORIGEM | Col 10: RESULTADO | Col 14: DESTINO | Col 19: PRINCIPAIS MOTIVOS DE REPROVA 
+Linha 3:
+Col 0: Agendamento | Col 1: Horário | Col 2: Marca | Col 3: Placa | Col 4: Ano | Col 5: Patrimônio | Col 6: Batalhão | Col 7: Cia | Col 8: OPM Origem | Col 9: Programa | Col 10: OBS: | Col 12: Vistoriador SAF | Col 13: Vistoriador MNT | Col 14: Baixada Grafismo | Col 15: Subfrota | Col 16: OPM | Col 17: Prefixo | Col 18: Data Entrega | Col 19: SUSPENSÃO | Col 20: PNEUS GASTO | Col 21: MOTOR | Col 22: CÂMBIO | Col 23: FREIO | Col 24: ARREFECIMENTO | Col 25: ELÉTRICA
+
+= Aba "Recolha M-3" =
+Linha 1:
+Col 0: RECOLHA - CPA/M-3
+Linha 2:
+Col 0: AGENDAMENTO | Col 2: DADOS ORIGEM | Col 11: RESULTADO | Col 17: DESTINO
+Linha 3:
+Col 0: Agendamento | Col 1: Horário | Col 2: Marca | Col 3: Placa | Col 4: Ano | Col 5: Patrimônio | Col 6: Prefixo | Col 7: Cód OPM Origem | Col 8: OPM Origem | Col 10: Programa | Col 11: OBS: | Col 13: Vistoriador SAF | Col 14: Tempo SAF | Col 15: Vistoriador MNT | Col 16: Tempo MNT | Col 17: Baixada Grafismo | Col 18: Subfrota | Col 19: OPM | Col 20: Prefixo | Col 21: Data Entrega
+
+= Aba "Recolha M-2" =
+Linha 1:
+Col 0: RECOLHA - CPA/M-2
+Linha 2:
+Col 0: AGENDAMENTO | Col 2: DADOS ORIGEM | Col 11: RESULTADO | Col 17: DESTINO
+Linha 3:
+Col 0: Agendamento | Col 1: Horário | Col 2: Marca | Col 3: Placa | Col 4: Ano | Col 5: Patrimônio | Col 6: Prefixo | Col 7: Cód OPM Origem | Col 8: OPM Origem | Col 10: Programa | Col 11: OBS: | Col 13: Vistoriador SAF | Col 14: Tempo SAF | Col 15: Vistoriador MNT | Col 16: Tempo MNT | Col 17: Baixada Grafismo | Col 18: Subfrota | Col 19: OPM | Col 20: Prefixo | Col 21: Data Entrega
+
+= Aba "Base" =
+Linha 1:
+Col 1: Aguardando Retirada
+Linha 2:
+Col 1: Disponível
+Linha 3:
+Col 1: Baixada
